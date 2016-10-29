@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<title></title>
+		<style>
+			.list{
+				list-style: none;				
+			}
+			.list img{
+				height:60px;
+				width:60px;
+				border:1px solid #FFFDEF;
+				border-radius: 50%;
+				margin:5px;
+			}
+			.box{
+				height:500px;
+				width:400px;
+				border:1px solid #737373;
+				margin:0 auto;
+			}
+			.list li{
+				transform:translateX(-100px);
+			}
+		</style>
+		<script src="zepto/src/touch.js"></script>
+		<script src="zepto/src/zepto.js"></script>  
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				var $list=$(".list");
+				$list.on("swipeLeft","li",function(){
+					$(this).find(".del").show();
+					
+				}).on("swipeRight","li",function(){
+					$(this).find(".del").hide();   
+				}).on("singleTop","li",function(){
+					$(this).closest("li").remove();
+				})
+			})
+		</script>
+	</head>
+	<body>  
+		<div  class="box">  
+			<ul  class="list">
+				<li>
+					<img src="img/1.jpg"> 
+					<span class="del">删除</span>
+				</li>
+				<li>
+					<img src="img/2.jpg"> 
+					<span class="del">删除</span>
+				</li>
+				<li>
+					<img src="img/3.jpg"> 
+					<span class="del">删除</span>
+				</li>
+				<li>
+					<img src="img/4.jpg"> 
+					<span class="del">删除</span>
+				</li>
+				<li>
+					<img src="img/5.jpg">
+					<span class="del">删除</span>
+				</li>
+				<li>
+					<img src="img/6.jpg"> 
+					<span class="del">删除</span>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

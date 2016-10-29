@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{
+				border:1px solid black;
+			}
+		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				var canvas=document.querySelector("canvas");
+				var ctx=canvas.getContext("2d");
+				canvas.width=canvas.height=500;
+				ctx.translate(250, 250);
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,-90*Math.PI/180,-67*Math.PI/180,false); 
+		
+				ctx.closePath();
+				ctx.fillStyle="#FF6600";
+				ctx.fill();
+				
+				
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,-67*Math.PI/180,-34*Math.PI/180,false); 
+			
+				ctx.closePath();
+				ctx.fillStyle="#00FF00";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,-34*Math.PI/180,21*Math.PI/180,false); 
+	
+				ctx.closePath();
+				ctx.fillStyle="#0000FF";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,21*Math.PI/180,130*Math.PI/180,false); 
+				
+				ctx.closePath();
+				ctx.fillStyle="#FFCC00";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,130*Math.PI/180,-90*Math.PI/180,false); 
+		
+				ctx.closePath();
+				ctx.fillStyle="#FF0000";
+				ctx.fill();
+				
+				/*标注*/
+				
+				ctx.beginPath();
+				ctx.moveTo(115*Math.cos(75*Math.PI/180),-115*Math.sin(75*Math.PI/180));
+				ctx.lineTo(115*Math.cos(75*Math.PI/180)+10,-115*Math.sin(75*Math.PI/180)-80);
+				ctx.lineTo(115*Math.cos(75*Math.PI/180)+50,-115*Math.sin(75*Math.PI/180)-80);		
+				ctx.stroke();
+				ctx.textBaseline = 'ideographic';
+				
+				ctx.fillText('200',115*Math.cos(75*Math.PI/180)+20,-115*Math.sin(75*Math.PI/180)-80);
+
+				
+				
+				ctx.beginPath();
+				ctx.moveTo(115*Math.cos(55*Math.PI/180),-115*Math.sin(55*Math.PI/180));
+				ctx.lineTo(115*Math.cos(55*Math.PI/180)+40,-115*Math.sin(55*Math.PI/180)-80);
+				ctx.lineTo(115*Math.cos(55*Math.PI/180)+80,-115*Math.sin(55*Math.PI/180)-80);		
+				ctx.stroke();
+				ctx.textBaseline = 'ideographic';
+				
+				ctx.fillText('260',115*Math.cos(55*Math.PI/180)+50,-115*Math.sin(55*Math.PI/180)-80);
+//				
+//				
+				ctx.beginPath();
+				ctx.moveTo(115*Math.cos(10*Math.PI/180),-115*Math.sin(10*Math.PI/180));
+				ctx.lineTo(115*Math.cos(10*Math.PI/180)+60,-115*Math.sin(10*Math.PI/180)-30);
+				ctx.lineTo(115*Math.cos(10*Math.PI/180)+100,-115*Math.sin(10*Math.PI/180)-30);		
+				ctx.stroke();
+//				ctx.textBaseline = 'ideographic';
+				
+				ctx.fillText('600',115*Math.cos(10*Math.PI/180)+70,-115*Math.sin(10*Math.PI/180)-30);
+//				
+//				
+				ctx.beginPath();
+				ctx.moveTo(100*Math.cos(75*Math.PI/180),100*Math.sin(75*Math.PI/180));
+				ctx.lineTo(100*Math.cos(75*Math.PI/180)+10,100*Math.sin(75*Math.PI/180)+80);
+				ctx.lineTo(100*Math.cos(75*Math.PI/180)+60,100*Math.sin(75*Math.PI/180)+80);		
+				ctx.stroke();
+				ctx.textBaseline = 'ideographic';
+				
+				ctx.fillText('1000',100*Math.cos(75*Math.PI/180)+20,100*Math.sin(75*Math.PI/180)+80);
+			
+//				
+//				
+				ctx.beginPath();
+				ctx.moveTo(100*Math.cos(200*Math.PI/180),100*Math.sin(200*Math.PI/180));
+				ctx.lineTo(100*Math.cos(200*Math.PI/180)-80,100*Math.sin(200*Math.PI/180)-80);
+				ctx.lineTo(100*Math.cos(200*Math.PI/180)-20,100*Math.sin(200*Math.PI/180)-80);		
+				ctx.stroke();
+//				
+  				ctx.textBaseline = 'ideographic';
+				
+				ctx.fillText('1200',100*Math.cos(200*Math.PI/180)-70,100*Math.sin(200*Math.PI/180)-80);
+			
+//				
+			})
+		</script>
+	</head>  
+	<body>  
+		<canvas>
+			  
+		</canvas>
+	</body>
+</html>

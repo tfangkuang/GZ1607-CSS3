@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.box{
+			position: relative;
+			
+		}
+			.sidebar{
+				list-style: none;
+				/*position: absolute;*/
+			}
+			.sidebar li{
+				height:50px;
+				width:50px;
+			}
+			.sidebar li img{
+				height:100%;
+				width:100%;
+			}
+			nav{
+				position: absolute;
+				top:0;
+				left:0;
+				transform: translateX(-100px);
+				transition: all 1s ;
+			}
+			.active{
+				transform: translateX(0);
+			}
+		</style>
+		<script>  
+			document.addEventListener("DOMContentLoaded",function(){
+				var  sidebar=document.querySelector(".sidebar");
+				var  box=document.querySelector(".box");
+				var  nav=document.querySelector("nav");
+				var starX,endX;
+				box.addEventListener("touchstart",function(e){
+					starX=e.changedTouches[0].pageX;
+					
+				});
+				box.addEventListener("touchmove",function(e){
+					endX=e.changedTouches[0].pageX;
+				var dis=endX-starX;	
+					if(dis>0){
+						if(dis>100){
+							nav.classList.add("active");
+						}
+					}
+					
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/mv3.jpg"/>
+		</div>
+		<nav>
+			<ul  class="sidebar">
+				<li><img src="img/mv2.jpg" /></li>  
+				<li><img src="img/mv3.jpg" /></li>
+				<li><img src="img/mv4.jpg" /></li>
+				<li><img src="img/mv5.jpg" /></li>
+				<li><img src="img/mv5.jpg" /></li> 
+			</ul>
+		</nav>
+		
+	</body>
+</html>
